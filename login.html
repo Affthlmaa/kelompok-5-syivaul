@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body>
+
+    <!--layout-->
+    <div Class="container di flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadaw-ig">
+        <h2 class="text-center mb-4">Login</h2>
+        <div id="alert" class="alert-denger d-none" role="alert">
+            Username atau Password Salah!
+    </div>
+
+      <form id="Loginform">
+        <div class="mb-3">
+            <label for="Username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="Username" required />
+        </div>
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Password" required/>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+     </form>
+     </div>
+  </div>
+
+
+    <!--script bootstrap-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--custom javascript-->
+    <script>
+        document
+        .getElementById("loginform")
+        .addEventListener("submit",function (event) {
+          event.preventDefault();
+      
+
+            const staticuser = {
+                Username:"cristal",
+                Password:"190906",
+            };
+
+            const Usernameinput = document.getElementById("Username").value;
+            const Passwordinput = document.getElementById("Password").value;
+
+            if(
+                Usernameinput === staticUser.Username &&
+                Passwordinput === staticUser.Password
+            ) {
+                alert("Login Berhasil");
+                window.Location.href = "index.html";
+            } else {
+                document.getElementById("alert").classList.remove("d-none")
+            }
+        });
+    </script>
+
+
+
+</body>
+</html>
